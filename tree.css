@@ -4,54 +4,58 @@
     box-sizing: border-box;
 }
 
-body, html {
-    height: 100%;
-    font-family: "Georgia", serif;
-}
-
-.container {
+body {
     height: 100vh;
-    width: 100%;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
     background-size: cover;
     background-position: center;
-    position: relative;
-}
-
-.day-1 {
-    background-image: url("https://i.pinimg.com/736x/10/e2/2b/10e22b57015b4d2fd75548f3312c96c2.jpg");
-}
-
-.day-2 {
-    background-image: url("https://i.pinimg.com/1200x/4c/df/85/4cdf85a2453a742b76bbd808e9d97b67.jpg");
-}
-
-.day-3 {
-    background-image: url("https://i.pinimg.com/1200x/27/8e/a8/278ea85ceebe2dd36f8f0f37ac25a2bf.jpg");
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
 }
 
 .overlay {
     position: absolute;
-    bottom: 10%;
-    left: 10%;
-    color: white;
-    background: rgba(0, 0, 0, 0.35);
-    padding: 20px;
-    border-radius: 12px;
-    max-width: 400px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+.content {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    max-width: 700px;
+    padding: 40px 25px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    animation: fadeIn 2s ease;
 }
 
 h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: clamp(40px, 8vw, 70px);
+    margin-bottom: 25px;
+    letter-spacing: 3px;
 }
 
-.caption {
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 8px;
+p {
+    font-size: 24px;
+    line-height: 1.8;
+    margin-top: 20px;
+    white-space: normal;
 }
 
-.meta {
-    font-size: 14px;
-    opacity: 0.8;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
